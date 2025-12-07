@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North Pole Letter Station</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", serif;
+    background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  /* Snow Animation */
+  .snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('https://i.ibb.co/FX0wV0z/snowflake.png'),
+                      url('https://i.ibb.co/FX0wV0z/snowflake.png'),
+                      url('https://i.ibb.co/FX0wV0z/snowflake.png');
+    background-repeat: repeat;
+    animation: snowfall 12s linear infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes snowfall {
+    0% { background-position: 0px -1000px; }
+    100% { background-position: 0px 1000px; }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(150, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    color: #b22222;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px #fff;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    color: #444;
+    margin-top: 25px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .button {
+    margin-top: 25px;
+    background-color: #b22222;
+    color: white;
+    padding: 16px 34px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .button:hover {
+    background-color: #7c0f0f;
+    transform: scale(1.05);
+  }
+</style>
+
+</head>
+<body>
+
+<div class="snow"></div>
+
+<div class="container">
+  <h1>🎅 North Pole Letter Station</h1>
+  <p>Welcome to the magical portal! With a single click, Santa will create a short and heartwarming letter for anyone you choose.</p>
+
+  <h2>✨ How to Use</h2>
+  <p>1. Click the red button below to open Santa’s official Letter Station.</p>
+  <p>2. Type the name of the person you want Santa to write to.</p>
+  <p>3. Add <strong>one simple detail</strong> (example: “She has been trying hard at school.”)</p>
+  <p>4. Santa will create a <strongshort, magical 1–2 paragraph letter</strong> filled with North Pole warmth.</p>
+  <p>5. You can also download a <strong>beautiful PDF</strong> of the letter to print or share.</p>
+
+  <button class="button" onclick="window.open('https://chatgpt.com/g/g-6936040fb8048191962439e6a31ca72f-north-pole-letter-station', '_blank')">
+    🎄 Open Santa’s Letter Station
+  </button>
+</div>
+
+</body>
+</html>

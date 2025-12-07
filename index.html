@@ -2,109 +2,192 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>North Pole Letter Station</title>
+<title>North Pole Letter Station 🎅✨</title>
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Georgia", serif;
-    background: linear-gradient(to bottom, #e3f2fd, #ffffff);
-    overflow: hidden;
-    text-align: center;
-  }
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #082032, #0f2d44, #16405b);
+        font-family: "Georgia", serif;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
 
-  /* Snow Animation */
-  .snow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: url('https://i.ibb.co/FX0wV0z/snowflake.png'),
-                      url('https://i.ibb.co/FX0wV0z/snowflake.png'),
-                      url('https://i.ibb.co/FX0wV0z/snowflake.png');
-    background-repeat: repeat;
-    animation: snowfall 12s linear infinite;
-    opacity: 0.6;
-  }
+    /* Snow animation */
+    .snowflake {
+        position: fixed;
+        top: -10px;
+        z-index: 9000;
+        color: white;
+        font-size: 1.2em;
+        opacity: 0.8;
+        animation: fall 10s linear infinite;
+        pointer-events: none;
+    }
 
-  @keyframes snowfall {
-    0% { background-position: 0px -1000px; }
-    100% { background-position: 0px 1000px; }
-  }
+    @keyframes fall {
+        to {
+            transform: translateY(110vh);
+            opacity: 0.3;
+        }
+    }
 
-  .container {
-    position: relative;
-    z-index: 10;
-    max-width: 700px;
-    background: rgba(255, 255, 255, 0.95);
-    margin: 80px auto;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 30px rgba(150, 0, 0, 0.3);
-    backdrop-filter: blur(4px);
-  }
+    /* Floating lanterns */
+    .lantern {
+        position: fixed;
+        bottom: -80px;
+        width: 35px;
+        height: 55px;
+        background: radial-gradient(circle at 50% 40%, #ffebc4, #d2954b, #8a5320);
+        border-radius: 8px;
+        opacity: 0.85;
+        box-shadow: 0 0 15px rgba(255,200,120,0.8);
+        animation: rise 12s linear infinite;
+        z-index: 8000;
+    }
 
-  h1 {
-    font-size: 2.6rem;
-    color: #b22222;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 3px #fff;
-  }
+    @keyframes rise {
+        0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+        70% { opacity: 1; }
+        100% { transform: translateY(-130vh) translateX(-20px); opacity: 0.2; }
+    }
 
-  h2 {
-    font-size: 1.6rem;
-    color: #444;
-    margin-top: 25px;
-  }
+    /* NORTH POLE SIGNPOST */
+    .signpost {
+        position: fixed;
+        left: 40px;
+        bottom: 20px;
+        z-index: 8500;
+        text-align: left;
+    }
 
-  p {
-    font-size: 1.2rem;
-    color: #333;
-    line-height: 1.6;
-  }
+    .pole {
+        width: 14px;
+        height: 140px;
+        background: repeating-linear-gradient(
+            45deg,
+            #ff0000 0px,
+            #ff0000 10px,
+            #ffffff 10px,
+            #ffffff 20px
+        );
+        border-radius: 6px;
+        margin-left: 25px;
+        box-shadow: 0 0 8px rgba(255,255,255,0.7);
+    }
 
-  .button {
-    margin-top: 25px;
-    background-color: #b22222;
-    color: white;
-    padding: 16px 34px;
-    border-radius: 10px;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
+    .sign {
+        background: #ffeccc;
+        padding: 10px 18px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        border: 2px solid #c44a00;
+        box-shadow: 0 0 8px rgba(255, 230, 180, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+        color: #4a1f00;
+        transform: rotate(-6deg);
+    }
 
-  .button:hover {
-    background-color: #7c0f0f;
-    transform: scale(1.05);
-  }
+    /* Portal */
+    .portal-box {
+        margin: 140px auto 0;
+        padding: 40px;
+        width: 85%;
+        max-width: 700px;
+        background: rgba(255,255,255,0.10);
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 20px rgba(255,230,180,0.4);
+        z-index: 1000;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+        text-shadow: 0 0 18px #ffcf8b;
+    }
+
+    p {
+        font-size: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+
+    .button {
+        margin-top: 30px;
+        padding: 15px 35px;
+        font-size: 22px;
+        background: #ffcf8b;
+        color: #4a2500;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 0 18px rgba(255,200,130,0.9);
+        transition: 0.2s;
+    }
+
+    .button:hover {
+        background: #ffe5c3;
+        transform: scale(1.07);
+    }
 </style>
-
 </head>
+
 <body>
 
-<div class="snow"></div>
+<!-- Snowflakes -->
+<script>
+function snow() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.innerHTML = "❄";
+    snowflake.style.left = Math.random() * 100 + "vw";
+    snowflake.style.animationDuration = (8 + Math.random() * 5) + "s";
+    snowflake.style.fontSize = (16 + Math.random() * 20) + "px";
+    document.body.appendChild(snowflake);
+    setTimeout(() => snowflake.remove(), 14000);
+}
+setInterval(snow, 200);
+</script>
 
-<div class="container">
-  <h1>🎅 North Pole Letter Station</h1>
-  <p>Welcome to the magical portal! With a single click, Santa will create a short and heartwarming letter for anyone you choose.</p>
+<!-- Floating Lanterns -->
+<script>
+function lantern() {
+    const lantern = document.createElement("div");
+    lantern.classList.add("lantern");
+    lantern.style.left = Math.random() * 100 + "vw";
+    lantern.style.animationDuration = (10 + Math.random() * 6) + "s";
+    lantern.style.opacity = 0.6 + Math.random() * 0.3;
+    document.body.appendChild(lantern);
+    setTimeout(() => lantern.remove(), 16000);
+}
+setInterval(lantern, 1200);
+</script>
 
-  <h2>✨ How to Use</h2>
-  <p>1. Click the red button below to open Santa’s official Letter Station.</p>
-  <p>2. Type the name of the person you want Santa to write to.</p>
-  <p>3. Add <strong>one simple detail</strong> (example: “She has been trying hard at school.”)</p>
-  <p>4. Santa will create a <strongshort, magical 1–2 paragraph letter</strong> filled with North Pole warmth.</p>
-  <p>5. You can also download a <strong>beautiful PDF</strong> of the letter to print or share.</p>
+<!-- North Pole Signpost -->
+<div class="signpost">
+    <div class="sign">North Pole</div>
+    <div class="pole"></div>
+</div>
 
-  <button class="button" onclick="window.open('https://chatgpt.com/g/g-6936040fb8048191962439e6a31ca72f-north-pole-letter-station', '_blank')">
-    🎄 Open Santa’s Letter Station
-  </button>
+<!-- Portal Content -->
+<div class="portal-box">
+    <h1>🎄 North Pole Letter Station 🎅</h1>
+    <p>
+        Step into Santa’s magical workshop!  
+        With one click, you’ll enter the North Pole where Santa creates  
+        warm, cozy, one-of-a-kind letters filled with Christmas wonder.
+    </p>
+
+    <button class="button" onclick="window.open('https://chatgpt.com/g/g-6936040fb8048191962439e6a31ca72f-north-pole-letter-station', '_blank')">
+        Enter the North Pole ✨
+    </button>
 </div>
 
 </body>
